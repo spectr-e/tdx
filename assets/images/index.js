@@ -1,3 +1,6 @@
 import quiz from './quiz.png'
 import card from './card.png'
-export { quiz, card }
+import logoWhite from './logowhite.png'
+import logoBlack from './logoblack.png'
+import profile from './profile.png'
+export { quiz, card, logoWhite, logoBlack, profile }

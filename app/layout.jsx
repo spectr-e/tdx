@@ -1,5 +1,8 @@
 import { poppins } from '@/utils/fonts'
 import '@/assets/styles/globals.css'
+import { NavBar } from '@/components'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 
 export const metadata = {
   title: 'Tatua | An Interactive Learning App',
@@ -21,7 +24,11 @@ const RootLayout = ({ children }) => {
           src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
         ></script>
       </head>
-      <body className={`${poppins} `}>{children}</body>
+      <body className={`${poppins} `}>
+        <NavBar />
+        {children}
+        <ToastContainer />
+      </body>
     </html>
   )
 }

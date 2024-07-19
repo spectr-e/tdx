@@ -3,15 +3,16 @@ import Image from 'next/image'
 import React from 'react'
 
 const Dashboard = () => (
-  <div className='flex flex-col items-center w-full min-h-screen py-16 overflow-hidden bg-gray-50 '>
+  <div className='flex flex-col items-start w-full min-h-[80vh] py-16 overflow-hidden bg-gray-50 '>
     <div className='container px-6 m-auto space-y-8 text-gray-500 md:px-12'>
       <div>
         <span className='text-lg font-semibold text-gray-600'>
-          Main features
+          Welcome to Tatua
         </span>
         <h2 className='mt-4 text-2xl font-bold text-gray-900 md:text-4xl'>
-          A tech-based approach to learning <br className='lg:block' hidden />{' '}
-          its funn too
+          An intuitive way to learn and become
+          <br className='lg:block' hidden />
+          smart 🤩
         </h2>
       </div>
       <div className='grid mt-16 overflow-hidden border divide-x divide-y rounded-xl sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-2 xl:grid-cols-2'>

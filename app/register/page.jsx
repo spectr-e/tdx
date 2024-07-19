@@ -1,6 +1,5 @@
 'use client'
 import { Typography } from '@material-tailwind/react'
-import { useState } from 'react'
 
 const Register = () => {
   return (
