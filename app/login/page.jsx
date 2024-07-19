@@ -1,14 +1,13 @@
 'use client'
 import { Typography } from '@material-tailwind/react'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const Login = () => {
   return (
-    <div className='flex flex-col items-center w-full min-h-screen pt-6 bg-gray-50 sm:justify-center sm:pt-0'>
+    <div className='flex flex-col items-center w-full min-h-[80vh] pt-6 bg-gray-50 sm:justify-center sm:pt-0'>
       <div className='w-full p-5 mx-auto sm:max-w-md'>
-        <h2 className='mb-12 text-4xl font-extrabold text-center'>
-          Sign In to Tatua
-        </h2>
+        <h2 className='mb-12 text-4xl font-extrabold text-center'>Sign In</h2>
         <form>
           {/* email field */}
           <div className='mb-4'>
@@ -55,15 +54,10 @@ const Login = () => {
             className='!mt-4 text-center font-normal'
           >
             Not registered?{' '}
-            <a href='#' className='font-medium text-gray-900'>
-              Create account
-            </a>
+            <Link href='/register' className='font-bold text-blue-500'>
+              Create an account
+            </Link>
           </Typography>
-          {/* <div className='mt-6 text-center'>
-            <a href='#' className='underline'>
-              Sign up for an account
-            </a>
-          </div> */}
         </form>
       </div>
     </div>

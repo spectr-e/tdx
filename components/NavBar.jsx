@@ -18,6 +18,7 @@ const NavBar = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(false)
   const pathName = usePathname()
+  const session = true
 
   // useEffect(() => {
   //   const setAuthProviders = async () => {
@@ -75,37 +76,127 @@ const NavBar = () => {
               </span>
             </Link>
 
-            {/* <!-- Desktop Menu Hidden below md screens --> */}
+            {/* <!-- Left Side Menu (Desktop) --> */}
             <div className='hidden md:ml-6 md:block'>
               <div className='flex space-x-2'>
                 <Link
-                  href='/'
+                  href='/flashcards'
                   className={`${
-                    pathName === '/' ? 'bg-black' : null
+                    pathName === '/flashcards' ? 'bg-black' : null
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Home
+                  Flashcards
                 </Link>
                 <Link
-                  href='/properties'
+                  href='/quizzes'
                   className={`${
                     pathName === '/properties' ? 'bg-black' : null
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Properties
+                  Quizzes
                 </Link>
 
-                <Link
-                  href='/properties/add'
-                  className={`${
-                    pathName === '/properties/add' ? 'bg-black' : null
-                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
-                >
-                  Add Property
-                </Link>
+                {session && (
+                  <>
+                    <Link
+                      href='/quizzes/add'
+                      className={`${
+                        pathName === '/quizzes/add' ? 'bg-black' : null
+                      } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    >
+                      Add Quiz
+                    </Link>
+                    <Link
+                      href='/flashcards/add'
+                      className={`${
+                        pathName === '/flashcards/add' ? 'bg-black' : null
+                      } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    >
+                      Add Flashcard
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
+
+          {/* <!-- Right Side Menu (Logged Out) --> */}
+          {!session && (
+            <div className='hidden md:block md:ml-6'>
+              <div className='flex items-center'>
+                <button className='flex items-center px-3 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'>
+                  <FaGoogle className='mr-2 text-white' />
+                  <span>Login or Register</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* <!-- Right Side Menu (Logged In) --> */}
+          {session && (
+            <div className='absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0'>
+              {/* <!-- Profile dropdown button --> */}
+              <div className='relative ml-3'>
+                <div>
+                  <button
+                    onClick={() => setOpenDropdown((prev) => !prev)}
+                    type='button'
+                    className='relative flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                    id='user-menu-button'
+                    aria-expanded='false'
+                    aria-haspopup='true'
+                  >
+                    <span className='absolute -inset-1.5'></span>
+                    <span className='sr-only'>Open user menu</span>
+                    <Image
+                      className='w-8 h-8 rounded-full'
+                      src={profile}
+                      alt=''
+                      sizes='100vh'
+                      width={0}
+                      height={0}
+                      priority={true}
+                    />
+                  </button>
+                </div>
+
+                {/* <!-- Profile dropdown --> */}
+                {openDropdown && (
+                  <div
+                    id='user-menu'
+                    className='absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
+                    role='menu'
+                    aria-orientation='vertical'
+                    aria-labelledby='user-menu-button'
+                    tabIndex='-1'
+                  >
+                    <Link
+                      href='/profile'
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-0'
+                      onClick={() => setOpenDropdown(false)}
+                    >
+                      Your Profile
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setOpenDropdown(false)
+                        // signOut()
+                      }}
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-2'
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -114,42 +205,44 @@ const NavBar = () => {
         <div id='mobile-menu'>
           <div className='px-2 pt-2 pb-3 space-y-1'>
             <Link
-              href='/'
+              href='/quizzes'
               className={`${
-                pathName === '/' ? 'bg-gray-900 ' : null
+                pathName === '/quizzes' ? 'bg-gray-900 ' : null
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
-              Home
+              Quizzes
             </Link>
             <Link
-              href='/properties'
+              href='/flashcards'
               className={`${
-                pathName === '/properties' ? 'bg-gray-900 ' : null
+                pathName === '/flashcards' ? 'bg-gray-900 ' : null
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
-              Properties
+              Flashcards
             </Link>
             {session && (
-              <Link
-                href='/properties/add'
-                className={`${
-                  pathName === '/properties/add' ? 'bg-gray-900 ' : null
-                } text-white block rounded-md px-3 py-2 text-base font-medium`}
-              >
-                Add Property
-              </Link>
-            )}
-            {!session &&
-              providers &&
-              Object.values(providers).map((provider, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => signIn(provider.id)}
-                  className='flex items-center px-3 py-2 my-8 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'
+              <>
+                <Link
+                  href='/quizzes/add'
+                  className={`${
+                    pathName === '/quizzes/add' ? 'bg-gray-900 ' : null
+                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
                 >
-                  <span>Login or Register</span>
-                </button>
-              ))}
+                  Add Quiz
+                </Link>
+                <Link
+                  href='/flashcards/add'
+                  className={`${
+                    pathName === '/flashcards/add' ? 'bg-gray-900 ' : null
+                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                >
+                  Add Flashcard
+                </Link>
+              </>
+            )}
+            <button className='flex items-center px-3 py-2 my-8 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'>
+              <span>Login or Register</span>
+            </button>
           </div>
         </div>
       )}
