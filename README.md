@@ -9,7 +9,7 @@ This project is an **Interactive Learning Modules** application designed to prov
 
 - **Josiah Nganga**  
   Email: devs.josia@gmail.com  
-  Phone: +25473672972910
+  Phone: +254736972910
 
 - **David Lekopien**  
   Email: mavericklekopien@gmail.com  
