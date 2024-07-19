@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { FaGoogle } from 'react-icons/fa'
 // import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const NavBar = () => {
@@ -18,7 +17,7 @@ const NavBar = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(false)
   const pathName = usePathname()
-  const session = true
+  const session = false
 
   // useEffect(() => {
   //   const setAuthProviders = async () => {
@@ -125,7 +124,6 @@ const NavBar = () => {
             <div className='hidden md:block md:ml-6'>
               <div className='flex items-center'>
                 <button className='flex items-center px-3 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'>
-                  <FaGoogle className='mr-2 text-white' />
                   <span>Login or Register</span>
                 </button>
               </div>

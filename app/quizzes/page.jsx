@@ -1,5 +1,7 @@
+import Quiz from '@/components/Quiz'
+
 const QuizzesPage = () => {
-  return <div>Show Quizzes</div>
+  return <Quiz />
 }
 
 export default QuizzesPage

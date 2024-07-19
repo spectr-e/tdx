@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+boddy {
+  margin: 0;
+  font-family: 'Alata', sans-serif;
+}
+
+.contain {
+  margin: 0 auto;
+  max-width: 1250px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  max-width: 100%;
+}
+
+.form-group > label {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+select,
+input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.btn {
+  padding: 0.7em 1em;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 0.3em;
+  display: block;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+
+.btn:hover {
+  background-position: right center;
+  text-decoration: none;
+}
+
+.theme-toggle-btn {
+  all: unset;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding-left: 0.4rem;
+}
+
+.card-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.4rem;
+  transform-style: preserve-3d;
+  transition: 150ms;
+  cursor: pointer;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y, 0));
+}
+
+.card:hover {
+  --translate-y: -2px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front {
+  left: 0;
+}
+
+.flashcard-question {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+  font-size: 1.3rem;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+  font-weight: bold;
+}
+
+.flashcard-options {
+  margin-top: 1.2rem;
+}
+
+.flashcard-option {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.flashcard-option:first-child {
+  margin-top: 0;
+}
