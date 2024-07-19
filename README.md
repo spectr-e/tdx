@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# README for Interactive Learning Modules – High Difficulty (Frontend)
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+This project is an **Interactive Learning Modules** application designed to provide engaging educational content through quizzes, flashcards, and other interactive activities. It is built using **Next.js** for the frontend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Team Members
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Josiah Nganga**  
+  Email: devs.josia@gmail.com  
+  Phone: +25473672972910
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **David Lekopien**  
+  Email: mavericklekopien@gmail.com  
+  Phone: +254757345407
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Prerequisites
 
-## Learn More
+Before running the project, ensure you have the following installed on your machine:
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can check your installed versions by running:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+````bash
+node -v
+npm -v
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Frontend Setup
+
+1. **Clone the Repository**
+   First, clone the repository to your local machine using the following command:
+
+   ```bash
+   git clone <repository-url>
+cd <frontend-directory>
+npm install
+
+
+### Backend Setup
+
+Navigate to the Backend Project Directory
+Change into the backend project directory:
+cd <backend-directory>
+
+2.npm install
+
+3.MONGO_URI=mongodb://localhost:27017/your-database
+JWT_SECRET=your-jwt-secret
+PORT=5000
+
+````
