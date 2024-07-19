@@ -1,9 +1,10 @@
-import { Login } from '@/components'
+import { Login, Register } from '@/components'
 
 const HomePage = () => {
   return (
     <main>
-      <Login />
+      {/* <Login /> */}
+      <Register />
     </main>
   )
 }
