@@ -1,10 +1,11 @@
-import { Login, Register } from '@/components'
+import { Dashboard, Login, Register } from '@/components'
 
 const HomePage = () => {
   return (
-    <main>
+    <main className='font-poppins'>
       {/* <Login /> */}
       <Register />
+      {/* <Dashboard /> */}
     </main>
   )
 }
