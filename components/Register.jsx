@@ -10,6 +10,27 @@ const Register = () => {
           Sign Up to Tatua
         </h2>
         <form>
+          {/* Role field */}
+          <div className='mb-4'>
+            <Typography
+              variant='small'
+              className='block mb-2 font-semibold text-gray-900'
+            >
+              Role
+            </Typography>
+            <select
+              id='role'
+              type='text'
+              name='role'
+              className='block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50 disabled:bg-gray-100'
+              required
+              value={''}
+              onChange={''}
+            >
+              <option value='Instructor'>Instructor</option>
+              <option value='Student'>Student</option>
+            </select>
+          </div>
           {/* Name field */}
           <div className='mb-4'>
             <Typography
