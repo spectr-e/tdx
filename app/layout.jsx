@@ -21,7 +21,7 @@ const RootLayout = ({ children }) => {
           src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
         ></script>
       </head>
-      <body className={`${poppins}`}>{children}</body>
+      <body className={`${poppins} `}>{children}</body>
     </html>
   )
 }

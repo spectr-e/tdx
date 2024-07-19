@@ -1,5 +1,11 @@
+import { Login } from '@/components'
+
 const HomePage = () => {
-  return <div>Welcome to Tatua</div>
+  return (
+    <main>
+      <Login />
+    </main>
+  )
 }
 
 export default HomePage
